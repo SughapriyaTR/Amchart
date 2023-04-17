@@ -24,6 +24,7 @@ export class AmchartsComponent implements OnInit {
   sampleData: any;
   newArray: any;
   transactionType: any;
+  volumeData: any;
 
   constructor(public http: HttpClient ) {
 
@@ -45,11 +46,23 @@ export class AmchartsComponent implements OnInit {
       this.sampleData.forEach((x1: any) => {
         x1.adate = new Date(Date.parse(x1.adate)).getTime();
       })
-    })
+    });
+
+    this.http.get('assets/volume.json').subscribe((data: any) => {
+      this.volumeData = data;
+      this.volumeData.forEach((x: any) => {
+        x.adate = new Date(Date.parse(x.adate)).getTime();
+      })
+    });
 
     setTimeout(() => {
       console.log(this.data, '555');
       console.log(this.sampleData, '111111111');
+      console.log(this.volumeData, '222222222222222222');
+
+   
+
+      console.log(this.data, '00000000000000000')
 
       this.newArray = this.data.filter((obj1: any) => {
         return this.sampleData.some((obj2: any) => {
