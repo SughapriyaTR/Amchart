@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleTestComponent implements OnInit {
   data: any;
-  volumeData: any
+  volumeData: any;
+  volmoValue: boolean = false;
 
   constructor(public http: HttpClient) { }
 
@@ -28,27 +29,20 @@ export class SampleTestComponent implements OnInit {
       })
     });
 
-
-    // setTimeout(() => {
-
-
   }
 
   addVol() {
+    this.volmoValue = true;
     console.log(this.data, '555');
     console.log(this.volumeData, '222222222222222222');
-
     this.data.forEach((element: any) => {
       this.volumeData.forEach((data: any) => {
         if(element.adate == data.adate) {
           element.VOLMO252_111617 = data.VOLMO252_111617;
           element.adate = new Date(element.adate).toDateString();
-          // element.adate = element.adate.toDateString();
         }
       });        
     });
-  // },100);
-
   console.log(this.data, '555');
   }
 

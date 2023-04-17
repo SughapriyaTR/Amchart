@@ -11,6 +11,8 @@
         <th scope="col">Low</th>
         <th scope="col">Close</th>
         <th scope="col">Volume</th>
+        <th *ngIf="volmoValue" scope="col">Volmo Value</th>
+
       </tr>
     </thead>
     <tbody>
@@ -21,7 +23,8 @@
         <td>{{list.ahigh}}</td>
         <td>{{list.alow}}</td>
         <td>{{list.aclose}}</td>
-        <td>{{list.VOLMO252_111617}}</td>
+        <td>{{list.volume}}</td>
+        <td *ngIf="volmoValue">{{list.VOLMO252_111617}}</td>
       </tr>
 
     </tbody>
