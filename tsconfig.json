@@ -2,6 +2,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    // "maxUnionSize": "1000000",
+    "skipLibCheck": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -19,7 +21,8 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
